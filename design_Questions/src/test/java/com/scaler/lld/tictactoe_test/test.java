@@ -29,20 +29,28 @@ public class test {
 
     private Game createGame(){
 
-        Game game = new Game();
+        // HumanPlayer human  = new HumanPlayer();
+        // human.setGameSymbol(GameSymbol.O);
+        // human.setUser(new User());
 
-        Board board = new Board(3,3);
-        
-        game.setBoard(board);
+        // BotPlayer botPlayer = new BotPlayer();
+        // botPlayer.setGameSymbol(GameSymbol.X);
+        Game game = Game.getBuilder()
+                        .withDimensionsBuilder(3, 3)
+                        .withPlayeBuilder(
+                            HumanPlayer.builder()
+                                .gameSymbol(GameSymbol.O)
+                                    .user(User.builder()
+                                        .email("email nahi bataunga")
+                                        .username("username")
+                                        .build())
+                            .build())
+                        .withPlayeBuilder(
+                            BotPlayer.builder().
+                            gameSymbol(GameSymbol.X).
+                            build())
+                        .build();
 
-        HumanPlayer human  = new HumanPlayer();
-        human.setGameSymbol(GameSymbol.O);
-        human.setUser(new User());
-
-        BotPlayer botPlayer = new BotPlayer();
-        botPlayer.setGameSymbol(GameSymbol.X);
-
-        game.setPlayers(Arrays.asList(human,botPlayer));
         return game;
 
     }
