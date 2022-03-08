@@ -8,7 +8,7 @@ public class ExitGateController {
     ExitGateService exitGateService = new ExitGateService();
 
     public int checkPayment(Ticket ticket){
-        Integer ret = exitGateService.checkPayment(ticket);
-        return ret;
+        Integer fees = exitGateService.checkPayment(ticket);
+        return fees;
     }
 }

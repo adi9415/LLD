@@ -16,9 +16,12 @@ public class ExitGateService {
         if(ticket.getTicketStatus() == TicketStatus.PENDING)
         {
             fees = feesCalculatorService.calculateFees(ticket,algorithm);
+            ticket.setTicketStatus(TicketStatus.DONE);
         }
 
+
         parkingSpotService.freeSpot(ticket.getSpotNumber());
+
         return fees;
     }
     
