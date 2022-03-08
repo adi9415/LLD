@@ -1,10 +1,8 @@
 package com.scaler.lld.tictactoe.models;
 
-import java.lang.module.ModuleDescriptor.Builder;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.management.RuntimeErrorException;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +12,7 @@ import lombok.Setter;
 public class Game {
     private Board board;
     List<Player> players = new ArrayList<>();
-
+    Player player;
 
     public static Builder getBuilder()
     {
@@ -40,7 +38,7 @@ public class Game {
 
         public Builder withPlayeBuilder(Player player)
         {
-            this.game.getPlayers().add(player);
+            
             return this;
         }
 

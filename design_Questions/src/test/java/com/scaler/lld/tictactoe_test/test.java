@@ -11,7 +11,9 @@ import com.scaler.lld.tictactoe.models.BotPlayer;
 import com.scaler.lld.tictactoe.models.Game;
 import com.scaler.lld.tictactoe.models.GameSymbol;
 import com.scaler.lld.tictactoe.models.HumanPlayer;
+import com.scaler.lld.tictactoe.models.PlayerType;
 import com.scaler.lld.tictactoe.models.User;
+import com.scaler.lld.tictactoe.models.HumanPlayer.HumanPlayerBuilder;
 
 import lombok.Setter;
 import lombok.Getter;
@@ -29,22 +31,11 @@ public class test {
 
     private Game createGame(){
 
-        // HumanPlayer human  = new HumanPlayer();
-        // human.setGameSymbol(GameSymbol.O);
-        // human.setUser(new User());
-
-        // BotPlayer botPlayer = new BotPlayer();
-        // botPlayer.setGameSymbol(GameSymbol.X);
         Game game = Game.getBuilder()
                         .withDimensionsBuilder(3, 3)
                         .withPlayeBuilder(
-                            HumanPlayer.builder()
-                                .gameSymbol(GameSymbol.O)
-                                    .user(User.builder()
-                                        .email("email nahi bataunga")
-                                        .username("username")
-                                        .build())
-                            .build())
+                            
+                        )
                         .withPlayeBuilder(
                             BotPlayer.builder().
                             gameSymbol(GameSymbol.X).
